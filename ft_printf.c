@@ -6,60 +6,64 @@
 /*   By: axcastil <axcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:41:16 by axcastil          #+#    #+#             */
-/*   Updated: 2023/11/22 16:30:57 by axcastil         ###   ########.fr       */
+/*   Updated: 2023/11/22 19:11:24 by axcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <unistd.h>
 
-void	*inspect(va_list args, char *letter, int *number)
+void	inspect(va_list args, char *letter, size_t *number)
 {
-	if (*letter != '\0')			
-	{
-		if (*letter == 's')
-			
+		if (*letter == 'c')
+			ft_putchar_printf(va_arg(args, int), number);
+		else if (*letter == 's')
+			ft_putstr_printf(va_arg(args, char *), number);
 		else if (*letter == 'p')
-		else if (*letter == 'd')
-		else if (*letter == 'i')
+			ft_putaddress_printf(va_arg(args, void *), number)
 		else if (*letter == 'u')
-		else if (*letter == 'x')
-		else if (*letter == 'X')
-		else if	(*letter == '%')
-		else
-			ft_putchar_print(*letter, *number);
-	}
-	else
-		ft_putchar_print()
+			ft_putunsigned_printf(va_arg(args, unsigned int), number)
+		else if (*letter == 'd' || *letter == 'i')
+			ft_putnbr_printf(va_arg(args, int), number);
+		else if (*letter == 'x' || *letter == 'X')
+		{
+			if (*letter == 'x')
+				ft_puthexadown_printf(va_arg(args, unsigned int), number);
+			else
+				ft_puthexaup_printf((va_arg(args, unsigned int), number));
+		}
+		else if (*letter == '%')
+			ft_putchar_printf('%', *number);
 }
 
 int	ft_printf(char const *sentence, ...)
 {
 	va_list	args;
-	size_t	j;
-	
+	size_t	size;
+
 	if (!sentence)
 		return (0);
-	j = 0;
+	size = 0;
 	va_start(args, sentence);
 	while (*sentence)
 	{
 		if (*sentence == '%')
 		{
 			sentence++;
-			inspect(args, &(*(sentence + 1)), &j);
+			inspect(args, (char *)sentence, &size);
 		}
 		else
-			ft_putchar_print(*sentence, &j);
+			ft_putchar_printf(*sentence, &size);
 		sentence++;
 	}
 	va_end(args);
-	return (j);
+	return (size);
 }
 
 int main()
 {
-	char *example = "holamundo";
-	
-	ft_printf("hola%mundo");
+	char letter = 'a';
+
+	int i = ft_printf("hola %c\n", letter);
+	printf ("%d", i);
+	return 0;
 }
