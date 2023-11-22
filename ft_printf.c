@@ -6,7 +6,7 @@
 /*   By: axcastil <axcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:41:16 by axcastil          #+#    #+#             */
-/*   Updated: 2023/11/22 19:11:24 by axcastil         ###   ########.fr       */
+/*   Updated: 2023/11/22 19:12:32 by axcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ void	inspect(va_list args, char *letter, size_t *number)
 		else if (*letter == 's')
 			ft_putstr_printf(va_arg(args, char *), number);
 		else if (*letter == 'p')
-			ft_putaddress_printf(va_arg(args, void *), number)
+			ft_putaddress_printf(va_arg(args, void *), number);
 		else if (*letter == 'u')
-			ft_putunsigned_printf(va_arg(args, unsigned int), number)
+			ft_putunsigned_printf(va_arg(args, unsigned int), number);
 		else if (*letter == 'd' || *letter == 'i')
 			ft_putnbr_printf(va_arg(args, int), number);
 		else if (*letter == 'x' || *letter == 'X')
@@ -62,7 +62,7 @@ int	ft_printf(char const *sentence, ...)
 int main()
 {
 	char letter = 'a';
-
+	
 	int i = ft_printf("hola %c\n", letter);
 	printf ("%d", i);
 	return 0;
