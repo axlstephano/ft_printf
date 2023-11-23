@@ -6,7 +6,7 @@
 /*   By: axcastil <axcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:18:04 by axcastil          #+#    #+#             */
-/*   Updated: 2023/11/22 19:08:28 by axcastil         ###   ########.fr       */
+/*   Updated: 2023/11/23 19:53:27 by axcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ void	ft_putchar_printf(char c, size_t *number)
 	(*number)++;
 }
 
-void	ft_putstr_printf(char *s, int *number)
+void	ft_putstr_printf(char *s, size_t *number)
 {
 	while(*s)
-		write (1, &(*s), 1);
-	(*number)++;
+	{
+		ft_putchar_printf(*s, number);
+		s++;	
+	}
 }
