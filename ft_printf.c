@@ -6,7 +6,7 @@
 /*   By: axcastil <axcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:41:16 by axcastil          #+#    #+#             */
-/*   Updated: 2023/11/22 19:12:32 by axcastil         ###   ########.fr       */
+/*   Updated: 2023/11/26 19:27:26 by axcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,11 @@ int	ft_printf(char const *sentence, ...)
 	return (size);
 }
 
-int main()
+/*int main()
 {
-	char letter = 'a';
+	char *letter = "adgds";
 	
-	int i = ft_printf("hola %c\n", letter);
-	printf ("%d", i);
+	int b = 345;
+	printf ("%p\n", letter);
 	return 0;
-}
+}*/

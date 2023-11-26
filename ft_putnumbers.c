@@ -6,7 +6,7 @@
 /*   By: axcastil <axcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 16:49:44 by axcastil          #+#    #+#             */
-/*   Updated: 2023/11/23 21:30:00 by axcastil         ###   ########.fr       */
+/*   Updated: 2023/11/26 16:42:52 by axcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,10 +92,31 @@ void	ft_puthexaup_printf(unsigned long long n, size_t *number)
 
 }
 
-int main()
+void	ft_putaddress_printf(void *address, size_t *number)
 {
-	unsigned long long	a = 987654;
-	size_t i = 0;
-	ft_putnbr_printf(a, &i);
-	return 0;
+	unsigned long long address2;
+
+	address2 = (unsigned long long) address;
+	ft_putstr_printf("0x", number);
+	ft_puthexadown_printf(address2, number);
 }
+
+void	ft_putunsigned_printf(unsigned int n, size_t *number)
+{
+	if (n > 9)
+	{
+		ft_putunsigned_printf((n / 10), number);
+		ft_putchar_printf(((n % 10) + 48), number);
+	}
+	else
+		ft_putchar_printf((n + 48), number);
+}
+
+/*int main()
+{
+	int e = -245;
+	size_t i = 0;
+	ft_putunsigned_printf(e, &i);
+	printf("\n%d",i);
+	return 0;
+}*/
