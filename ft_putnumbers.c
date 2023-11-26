@@ -6,7 +6,7 @@
 /*   By: axcastil <axcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 16:49:44 by axcastil          #+#    #+#             */
-/*   Updated: 2023/11/26 16:42:52 by axcastil         ###   ########.fr       */
+/*   Updated: 2023/11/26 19:53:22 by axcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,34 +36,27 @@ void	ft_putnbr_printf(int n, size_t *number)
 		ft_putchar_printf((n + 48), number);
 }
 
-/*void	ft_putaddress_printf(unsigned long long *address, size_t *number)
-{
-	char	*address2;
-	
-		
-}*/
-
 void	ft_puthexadown_printf(unsigned long long n, size_t *number)
 {
 	char	storage[16];
 	int		i;
-	
+
 	i = 0;
 	if (n == 0)
 	{
 		ft_putchar_printf('0', number);
-		return;
+		return ;
 	}
-	while(n > 0)
+	while (n > 0)
 	{
 		if ((n % 16) > 9)
-			storage[i] = (n % 16) + 87; 
+			storage[i] = (n % 16) + 87;
 		else if ((n % 16) < 10)
 			storage[i] = (n % 16) + 48;
 		n /= 16;
 		i ++;
 	}
-	while(i--)
+	while (i--)
 		ft_putchar_printf(storage[i], number);
 }
 
@@ -71,30 +64,29 @@ void	ft_puthexaup_printf(unsigned long long n, size_t *number)
 {
 	char	storage[16];
 	int		i;
-	
+
 	i = 0;
 	if (n == 0)
 	{
 		ft_putchar_printf('0', number);
-		return;
+		return ;
 	}
-	while(n > 0)
+	while (n > 0)
 	{
 		if ((n % 16) > 9)
-			storage[i] = (n % 16) + 55; 
+			storage[i] = (n % 16) + 55;
 		else if ((n % 16) < 10)
 			storage[i] = (n % 16) + 48;
 		n /= 16;
 		i ++;
 	}
-	while(i--)
+	while (i--)
 		ft_putchar_printf(storage[i], number);
-
 }
 
 void	ft_putaddress_printf(void *address, size_t *number)
 {
-	unsigned long long address2;
+	unsigned long long	address2;
 
 	address2 = (unsigned long long) address;
 	ft_putstr_printf("0x", number);

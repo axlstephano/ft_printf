@@ -6,7 +6,7 @@
 /*   By: axcastil <axcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 18:08:05 by axcastil          #+#    #+#             */
-/*   Updated: 2023/11/23 17:21:35 by axcastil         ###   ########.fr       */
+/*   Updated: 2023/11/26 19:50:45 by axcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,14 @@
 # include <fcntl.h>
 # include <stdarg.h>
 
+int		ft_printf(char const *sentence, ...);
+void	inspect(va_list args, char *letter, size_t *number);
 void	ft_putchar_printf(char c, size_t *number);
 void	ft_putstr_printf(char *s, size_t *number);
-void	ft_putnbr_print(int n, size_t *number);
+void	ft_putnbr_printf(int n, size_t *number);
+void	ft_putunsigned_printf(unsigned int n, size_t *number);
+void	ft_putaddress_printf(void *address, size_t *number);
+void	ft_puthexaup_printf(unsigned long long n, size_t *number);
+void	ft_puthexadown_printf(unsigned long long n, size_t *number);
 
 #endif
