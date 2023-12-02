@@ -6,7 +6,7 @@
 /*   By: axcastil <axcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 16:41:16 by axcastil          #+#    #+#             */
-/*   Updated: 2023/11/26 20:02:45 by axcastil         ###   ########.fr       */
+/*   Updated: 2023/12/02 12:48:57 by axcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,3 @@ int	ft_printf(char const *sentence, ...)
 	va_end(args);
 	return (size);
 }
-
-/*int main()
-{
-	char *letter = "adgds";
-	
-	int b = 345;
-	printf ("%p\n", letter);
-	return 0;
-}*/
