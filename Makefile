@@ -6,7 +6,7 @@
 #    By: axcastil <axcastil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/26 19:47:07 by axcastil          #+#    #+#              #
-#    Updated: 2023/11/26 19:48:55 by axcastil         ###   ########.fr        #
+#    Updated: 2023/12/27 18:50:58 by axcastil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,4 +32,4 @@ fclean:			clean
 
 re:				fclean $(NAME)
 
-.PHONY:			all clean fclean re bonus
+.PHONY:			all clean fclean re

@@ -6,7 +6,7 @@
 /*   By: axcastil <axcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 16:49:44 by axcastil          #+#    #+#             */
-/*   Updated: 2023/11/26 19:53:22 by axcastil         ###   ########.fr       */
+/*   Updated: 2023/12/27 18:46:13 by axcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	ft_putnbr_printf(int n, size_t *number)
 {
-	long int	i;
-
-	i = n;
 	if (n == -2147483648)
 	{
 		ft_putstr_printf("-2147483648", number);
