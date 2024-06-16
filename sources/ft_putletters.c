@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putletters.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: axcastil <axcastil@student.42.fr>          +#+  +:+       +#+        */
+/*   By: axcastil <axcastil@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:18:04 by axcastil          #+#    #+#             */
-/*   Updated: 2023/12/02 13:38:31 by axcastil         ###   ########.fr       */
+/*   Updated: 2024/06/16 17:03:46 by axcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 void	ft_putchar_printf(char c, size_t *number)
 {

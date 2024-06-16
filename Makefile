@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: axcastil <axcastil@student.42.fr>          +#+  +:+       +#+         #
+#    By: axcastil <axcastil@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/26 19:47:07 by axcastil          #+#    #+#              #
-#    Updated: 2023/12/27 18:50:58 by axcastil         ###   ########.fr        #
+#    Updated: 2024/06/16 17:04:15 by axcastil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		=	ft_printf.c ft_putletters.c ft_putnumbers.c
+SRCS		=	$(wildcard sources/*.c)
 OBJS		=	$(SRCS:.c=.o)
 
-NAME 			= libftprintf.a
+NAME 			= ft_printf.a
 
 CC			=	gcc
 RM			=	rm -f
@@ -22,13 +22,13 @@ CFLAGS		=	-Wall -Wextra -Werror
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
-				ar rcs $(NAME) $(OBJS)
+				@ar rcs $(NAME) $(OBJS)
 
 clean:
-				$(RM) $(OBJS) 
-				
+				@$(RM) $(OBJS) 
+
 fclean:			clean
-				$(RM) $(NAME)
+				@$(RM) $(NAME)
 
 re:				fclean $(NAME)
 
